@@ -58,27 +58,38 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-
-  config.action_mailer.default_url_options = { host: 'gmail.com' }
-  #   }
-  #host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # host: 'gmail.com'
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  address:              'smtp.mailgun.org',
-  port:                 587,
-  domain:               'sandboxf1aab07418a3401d87f8f564e0de88b0.mailgun.org ',
-  user_name:            'postmaster@sandboxf1aab07418a3401d87f8f564e0de88b0.mailgun.org',
-  password:             '9f8131d64f04d1aa1dbe0e20fda4934c-9525e19d-7d9d3789',
-  authentication:       'plain',
+    address:                  'smtp.sendgrid.net',
+    port:                     '587',
+    authentication:           'plain',
+    user_name:                'username@heroku.com',
+    password:                 'password',
+    domain:                   'heroku.com',
+    enable_starttls_auto:      true
   }
+
+  #config.action_mailer.smtp_settings = {
+  #address:              'smtp.mailgun.org',
+  #port:                 587,
+  #domain:               'sandboxf1aab07418a3401d87f8f564e0de88b0.mailgun.org ',
+  #user_name:            'postmaster@sandboxf1aab07418a3401d87f8f564e0de88b0.mailgun.org',
+  #password:             '9f8131d64f04d1aa1dbe0e20fda4934c-9525e19d-7d9d3789',
+  #authentication:       'plain',
+  #}
 
   #config.action_mailer.smtp_settings = {
   #address:              'smtp.gmail.com',
   #port:                 587,
   #domain:               'gmail.com',
-  #user_name:            'wrktestmail@gmail.com',
-  #password:             'WRKTSTMLGMLCM',
+  #user_name:            ENV['gmail_username'],
+  #password:             ENV['gmail_pass'],
   #authentication:       'plain',
   #enable_starttls_auto: true
   #}
