@@ -72,3 +72,7 @@ gem 'toastr-rails'
 
 gem 'omniauth'
 gem 'omniauth-facebook'
+
+gem 'figaro'
+
+gem 'rails_12factor', group: :production

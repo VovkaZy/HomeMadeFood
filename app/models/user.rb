@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   validates :fullname, presence: true, length: {maximum: 50}
 
+# Check if email in db, then return user with this email
+# if not, we create new user with random pass
  def self.from_omniauth(auth)
   user = User.where(email: auth.info.email).first
 
