@@ -287,5 +287,5 @@ Devise.setup do |config|
   # ActiveSupport.on_load(:devise_failure_app) do
   #   include Turbolinks::Controller
   # end
-  config.omniauth :facebook, '563805237399354', '0ae3848e1365ec44445d8ccc554568b6', scope: 'email', info_fields:  'email, name'
+  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], scope: 'email', info_fields:  'email, name'
 end
