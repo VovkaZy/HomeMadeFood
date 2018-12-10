@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
-  # Settings specified here will take precedence over those in config/application.rb.
+  # Settings specified here will
+  # take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
@@ -27,7 +30,8 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  # Store uploaded files on the local file system (see config/storage.yml for options)
+  # Store uploaded files on the local
+  # file system (see config/storage.yml for options)
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
@@ -66,31 +70,31 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:                  'smtp.sendgrid.net',
-    port:                     '587',
-    authentication:           'plain',
-    user_name:                 ENV['SENDGRID_USERNAME'],
-    password:                  ENV['SENDGRID_PASSWORD'],
-    domain:                   'heroku.com',
-    enable_starttls_auto:      true
+    address: 'smtp.sendgrid.net',
+    port: 587,
+    authentication: 'plain',
+    user_name: ENV['SENDGRID_USERNAME'],
+    password: ENV['SENDGRID_PASSWORD'],
+    domain: 'heroku.com',
+    enable_starttls_auto: true
   }
 
-  #config.action_mailer.smtp_settings = {
-  #address:              'smtp.mailgun.org',
-  #port:                 587,
-  #domain:               'sandboxf1aab07418a3401d87f8f564e0de88b0.mailgun.org ',
-  #user_name:            'postmaster@sandboxf1aab07418a3401d87f8f564e0de88b0.mailgun.org',
-  #password:             '9f8131d64f04d1aa1dbe0e20fda4934c-9525e19d-7d9d3789',
-  #authentication:       'plain',
-  #}
+  # config.action_mailer.smtp_settings = {
+  # address: 'smtp.mailgun.org',
+  # port: 587,
+  # domain: 'sandboxf1aab07418a3401d87f8f564e0de88b0.mailgun.org ',
+  # user_name: 'postmaster@sandboxf1aab07418a3401d87f8f564e0de88b0.mailgun.org',
+  # password: '9f8131d64f04d1aa1dbe0e20fda4934c-9525e19d-7d9d3789',
+  # authentication: 'plain',
+  # }
 
-  #config.action_mailer.smtp_settings = {
-  #address:              'smtp.gmail.com',
-  #port:                 587,
-  #domain:               'gmail.com',
-  #user_name:            ENV['gmail_username'],
-  #password:             ENV['gmail_pass'],
-  #authentication:       'plain',
-  #enable_starttls_auto: true
-  #}
-  end
+  # config.action_mailer.smtp_settings = {
+  # address:              'smtp.gmail.com',
+  # port:                 587,
+  # domain:               'gmail.com',
+  # user_name:            ENV['gmail_username'],
+  # password:             ENV['gmail_pass'],
+  # authentication:       'plain',
+  # enable_starttls_auto: true
+  # }
+end
